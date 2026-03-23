@@ -7,7 +7,7 @@
     "github": "juanescendales"
   },
   "homepage": "https://github.com/juanescendales/agentic-code/tree/main/essentials",
-  "repository": "https://github.com/juanescendales/agentic-code",
+  "repository": { "url": "https://github.com/juanescendales/agentic-code" },
   "license": "MIT",
   "skills": [
     "sessions-setup",
