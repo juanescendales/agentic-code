@@ -1,0 +1,12 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code session artifacts (generated at runtime)
+.claude/session.json
+.claude/checkpoints.json
+.claude/sessions.yml
