@@ -24,7 +24,7 @@ Only when user explicitly runs `/sessions-update` or `/sessions-update close`.
 ### Step 0: Check configuration
 
 ```bash
-! node scripts/sessions-config.js read
+! node ${CLAUDE_SKILL_DIR}/scripts/sessions-config.js read
 ```
 
 If the script exits with an error (no `.claude/sessions.yml`), tell the user:
@@ -38,7 +38,7 @@ Then stop. Check whether `$ARGUMENTS` contains `close` — store this as `CLOSIN
 ### Step 1: Resolve the active session directory
 
 ```bash
-! node scripts/session-link.js read
+! node ${CLAUDE_SKILL_DIR}/scripts/session-link.js read
 ```
 
 If it fails (no `.claude/session.json`), tell the user:
@@ -87,7 +87,7 @@ Update the file in place:
 ### Step 5: Create checkpoint
 
 ```bash
-! node scripts/manage-checkpoints.js create session-updated $CLAUDE_SESSION_ID
+! node ${CLAUDE_SKILL_DIR}/scripts/manage-checkpoints.js create session-updated $CLAUDE_SESSION_ID
 ```
 
 Read the printed JSON. Update `**Last Checkpoint:**` in session.md:
@@ -111,7 +111,7 @@ If `$ARGUMENTS` contains `close`:
 **Step 6b:** Clear the session link:
 
 ```bash
-! node scripts/session-link.js clear
+! node ${CLAUDE_SKILL_DIR}/scripts/session-link.js clear
 ```
 
 ### Step 7: Confirm

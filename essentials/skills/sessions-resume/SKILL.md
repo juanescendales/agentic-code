@@ -23,7 +23,7 @@ Only when user explicitly runs `/sessions-resume`.
 ### Step 0: Check configuration
 
 ```bash
-! node scripts/sessions-config.js read
+! node ${CLAUDE_SKILL_DIR}/scripts/sessions-config.js read
 ```
 
 If the script exits with an error (no `.claude/sessions.yml`), tell the user:
@@ -37,13 +37,13 @@ Then stop. Otherwise read `{ project, sessions_dir }`.
 ### Step 1: Find the most recent active session
 
 ```bash
-! node scripts/find-by-project.js
+! node ${CLAUDE_SKILL_DIR}/scripts/find-by-project.js
 ```
 
 If the script **fails** (no active sessions), show available sessions — including closed ones — so the user knows what exists:
 
 ```bash
-! node scripts/list.js
+! node ${CLAUDE_SKILL_DIR}/scripts/list.js
 ```
 
 Then tell the user:
@@ -123,7 +123,7 @@ Ready to continue. What would you like to do?
 ### Step 5b: Write the active session link
 
 ```bash
-! node scripts/session-link.js write <project> <session-directory> $CLAUDE_SESSION_ID
+! node ${CLAUDE_SKILL_DIR}/scripts/session-link.js write <project> <session-directory> $CLAUDE_SESSION_ID
 ```
 
 ### Step 6: Wait

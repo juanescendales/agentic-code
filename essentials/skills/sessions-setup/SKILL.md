@@ -25,7 +25,7 @@ Initialize session storage for this project. Creates `.claude/sessions.yml`, whi
 ### Step 1: Check if already initialized
 
 ```bash
-! node scripts/sessions-config.js read
+! node ${CLAUDE_SKILL_DIR}/scripts/sessions-config.js read
 ```
 
 If the command succeeds and prints `{ project, sessions_dir }`, sessions.yml already exists. Tell the user:
@@ -45,7 +45,7 @@ Then stop — do not overwrite an existing config.
 If `$ARGUMENTS` is provided, validate and sanitize it:
 
 ```bash
-! node scripts/validate-project-name.js "$ARGUMENTS"
+! node ${CLAUDE_SKILL_DIR}/scripts/validate-project-name.js "$ARGUMENTS"
 ```
 
 If the script exits with an error, show the error and stop.
@@ -54,7 +54,7 @@ If it prints a different name than what was given, show: `Using project name: <s
 If no `$ARGUMENTS`, detect automatically:
 
 ```bash
-! node scripts/sessions-config.js init
+! node ${CLAUDE_SKILL_DIR}/scripts/sessions-config.js init
 ```
 
 This auto-detects the name from `git remote get-url origin` or the current directory name.
@@ -63,7 +63,7 @@ Read the printed `{ project, sessions_dir }` and inform the user of the detected
 If `$ARGUMENTS` was provided (and validated), call init with the name:
 
 ```bash
-! node scripts/sessions-config.js init <sanitized-name>
+! node ${CLAUDE_SKILL_DIR}/scripts/sessions-config.js init <sanitized-name>
 ```
 
 ### Step 3: Confirm storage location

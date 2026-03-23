@@ -36,7 +36,7 @@ Each session is a directory, not a file:
 ### Step 0: Check configuration
 
 ```bash
-! node scripts/sessions-config.js read
+! node ${CLAUDE_SKILL_DIR}/scripts/sessions-config.js read
 ```
 
 If the script exits with an error (no `.claude/sessions.yml`), tell the user:
@@ -157,7 +157,7 @@ If any plans, research docs, or other files were generated during this session, 
 ### Step 5: Write the active session link
 
 ```bash
-! node scripts/session-link.js write <project> <sessions_dir>/<session-dir> $CLAUDE_SESSION_ID
+! node ${CLAUDE_SKILL_DIR}/scripts/session-link.js write <project> <sessions_dir>/<session-dir> $CLAUDE_SESSION_ID
 ```
 
 This creates `.claude/session.json` in the current project directory so other skills know where the active session lives.
@@ -165,7 +165,7 @@ This creates `.claude/session.json` in the current project directory so other sk
 ### Step 6: Create initial checkpoint
 
 ```bash
-! node scripts/manage-checkpoints.js create session-saved $CLAUDE_SESSION_ID
+! node ${CLAUDE_SKILL_DIR}/scripts/manage-checkpoints.js create session-saved $CLAUDE_SESSION_ID
 ```
 
 Read the printed JSON (`{ name, sha, timestamp }`). Update `**Last Checkpoint:**` in `session.md` to:

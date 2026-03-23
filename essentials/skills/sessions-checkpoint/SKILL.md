@@ -26,7 +26,7 @@ Only when user explicitly runs `/sessions-checkpoint`.
 ### Step 0: Parse and validate arguments
 
 ```bash
-! node scripts/parse-args.js "$ARGUMENTS"
+! node ${CLAUDE_SKILL_DIR}/scripts/parse-args.js "$ARGUMENTS"
 ```
 
 If the script exits with an error, show the error message and stop.
@@ -41,7 +41,7 @@ If it exits successfully, it prints JSON like `{"action":"create","name":"featur
 2. Create the checkpoint entry:
 
 ```bash
-! node scripts/manage-checkpoints.js create <name>
+! node ${CLAUDE_SKILL_DIR}/scripts/manage-checkpoints.js create <name>
 ```
 
 The script prints JSON `{ name, sha, timestamp, dirty_files }`. Use `sha` for the confirmation.
@@ -55,7 +55,7 @@ The script prints JSON `{ name, sha, timestamp, dirty_files }`. Use `sha` for th
 1. Find the checkpoint:
 
 ```bash
-! node scripts/manage-checkpoints.js list
+! node ${CLAUDE_SKILL_DIR}/scripts/manage-checkpoints.js list
 ```
 
 Locate the entry with matching `name` and extract its `sha`.
@@ -81,7 +81,7 @@ Files changed: X
 ### list
 
 ```bash
-! node scripts/manage-checkpoints.js list
+! node ${CLAUDE_SKILL_DIR}/scripts/manage-checkpoints.js list
 ```
 
 ---
@@ -91,7 +91,7 @@ Files changed: X
 Keep the last 5 checkpoints:
 
 ```bash
-! node scripts/manage-checkpoints.js clear 5
+! node ${CLAUDE_SKILL_DIR}/scripts/manage-checkpoints.js clear 5
 ```
 
 Confirm: "Kept last N checkpoint(s)."
