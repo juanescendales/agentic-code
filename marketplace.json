@@ -1,16 +1,17 @@
 {
   "name": "agentic-code",
-  "description": "Agentic tools and skills for Claude Code by Juan Cendales",
-  "author": {
+  "owner": {
     "name": "Juan Cendales",
-    "github": "juanescendales"
+    "email": "jcendales.dev@gmail.com"
   },
-  "homepage": "https://github.com/juanescendales/agentic-code",
   "plugins": [
     {
       "name": "essentials",
       "description": "Session management skills — save, resume, and checkpoint work across multiple Claude Code sessions in any repository.",
       "version": "0.1.0",
+      "author": {
+        "name": "Juan Cendales"
+      },
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/juanescendales/agentic-code.git",

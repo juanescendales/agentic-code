@@ -4,16 +4,9 @@
   "version": "0.1.0",
   "author": {
     "name": "Juan Cendales",
-    "github": "juanescendales"
+    "email": "juanescendales"
   },
   "homepage": "https://github.com/juanescendales/agentic-code/tree/main/essentials",
-  "repository": { "url": "https://github.com/juanescendales/agentic-code" },
-  "license": "MIT",
-  "skills": [
-    "sessions-setup",
-    "sessions-save",
-    "sessions-resume",
-    "sessions-update",
-    "sessions-checkpoint"
-  ]
+  "repository": "https://github.com/juanescendales/agentic-code",
+  "license": "MIT"
 }
